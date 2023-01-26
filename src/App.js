@@ -1,11 +1,13 @@
 
 import './App.css';
+import  { TaskContextProvider } from './context/TaskContext';
+import { TaskRoutes } from './routes/TaskRouter';
 
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <TaskContextProvider>
+      <TaskRoutes/>
+    </TaskContextProvider>
   );
 }
 
