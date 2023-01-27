@@ -1,13 +1,9 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { TaskComponent } from './TaskComponent'
-import { TaskView } from './TaskView'
+
 
 export const AllTaskComponent=(props)=>{
-    const {allTask} = props
-
-    const [taskIsDone, setTaskIsDone] = useState(allTask.done)
-    console.log(allTask, 'desde component task')
-    
+    const {allTask} = props  
 
     return(
         <div>

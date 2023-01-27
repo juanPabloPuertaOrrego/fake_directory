@@ -7,7 +7,6 @@ import { AllTaskComponent } from './AllTaskComponent';
 export const AllTasks =()=>{
     const {tasks} = useContext(TaskContext);
     const navigate = useNavigate()
-    console.log(tasks, 'tasks en inicio')
 
     const handleOnAddTask =()=>{
         navigate('/add')
