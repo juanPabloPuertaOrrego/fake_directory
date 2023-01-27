@@ -17,7 +17,9 @@ export const AddTaskComponent =() =>{
         e.preventDefault()
         const task = {
             id:Date.now(),
-            task:value
+            task:value,
+            done:false
+
         }
         setTasks([task,...tasks])
         navigate('/')
