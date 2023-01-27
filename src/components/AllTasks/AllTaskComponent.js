@@ -6,7 +6,7 @@ export const AllTaskComponent=(props)=>{
     const {allTask} = props  
 
     return(
-        <div>
+        <div className='d-flex align-items-start flex-wrap'>
             {allTask.map((element)=>
             <TaskComponent key={element.id} 
             task={element}             

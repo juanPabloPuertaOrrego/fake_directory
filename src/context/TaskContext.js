@@ -8,10 +8,6 @@ export const TaskContextProvider =({children})=>{
 
     const  [tasks, setTasks]=useState(db)
 
-    console.log('task in context')
-
-    console.log(tasks)
-
     const constextValue={
         tasks,setTasks
     }

@@ -12,13 +12,18 @@ export const AllTasks =()=>{
         navigate('/add')
     }
     return(
-        <div className='container'>
-        <h1>My tasks</h1>
-        <div>
-        <button onClick={handleOnAddTask}>Go to add tasks</button>
+        <>
+        <div className='container d-flex align-items-center flex-column border border-success '>
+            <div >
+                <h1>My tasks</h1>
+            </div>                
+            <div>
+                <button onClick={handleOnAddTask}>Go to add tasks</button>
+            </div> 
+            
         </div>
-        <AllTaskComponent allTask={tasks}/>
-        </div>
+        <AllTaskComponent allTask={tasks}/> 
+        </>
         )
 
 }
