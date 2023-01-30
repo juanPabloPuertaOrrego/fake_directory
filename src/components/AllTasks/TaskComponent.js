@@ -7,7 +7,8 @@ export const TaskComponent =(props)=>{
     const {task} = props
     const [done, setDone] = useState(false);
     const {tasks, setTasks} = useContext(TaskContext);
-
+    const [tasksComplete, setTasksComplete] = useState(tasks);
+  
     const navigate = useNavigate()
 
 
@@ -18,6 +19,7 @@ export const TaskComponent =(props)=>{
     const handleOnDelete =(id)=>{
         const newTasks = tasks.filter(elemento=>elemento.id!==id)
         setTasks(newTasks)
+    
     }
 
     const handleOnEdit =(id)=>{

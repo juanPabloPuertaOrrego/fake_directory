@@ -11,6 +11,11 @@ export const AllTasks =()=>{
     const handleOnAddTask =()=>{
         navigate('/add')
     }
+
+    const handleOnHistory =()=>{
+        navigate('/taskHistory')
+    }
+
     return(
         <>
         <div className='container d-flex align-items-center flex-column border border-success '>
@@ -20,6 +25,8 @@ export const AllTasks =()=>{
             <div>
                 <button onClick={handleOnAddTask}>Go to add tasks</button>
             </div> 
+            <div>
+                <button onClick={handleOnHistory}>Go to hstory</button>            </div> 
             
         </div>
         <AllTaskComponent allTask={tasks}/> 
