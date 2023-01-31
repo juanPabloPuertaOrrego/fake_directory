@@ -1,12 +1,15 @@
-import React, {useState} from 'react'
+import React, {useContext} from 'react'
+import { TaskContext } from '../../context/TaskContext';
 import { TaskComponent } from './TaskComponent'
 
 
 export const TasksComponentList=(props)=>{
-    const [truco, seTtruco] = useState(false);
-    const {allTask, hideDoneTasks} = props     
     
-    const tasksToShow = hideDoneTasks ? allTask.filter(task => !task.done):allTask
+    const {tasks} = useContext(TaskContext)
+
+    const {hideDoneTasks} = props     
+    
+    const tasksToShow = hideDoneTasks ? tasks.filter(task => !task.done):tasks
 
     return(
 
@@ -14,7 +17,7 @@ export const TasksComponentList=(props)=>{
             { tasksToShow.map((element)=>
             <TaskComponent key={element.id} 
             task={element}
-            changeHandler = {seTtruco}             
+           // changeHandler = {seTtruco}             
             />)}
         </div>
     )

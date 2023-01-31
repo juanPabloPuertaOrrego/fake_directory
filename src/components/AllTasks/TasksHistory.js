@@ -1,5 +1,5 @@
 import React from 'react'
-import { TasksComponentList } from './AllTaskComponent'
+import { TasksComponentList } from './TasksComponentList'
 import { useContext } from 'react'
 import { TaskContext } from '../../context/TaskContext'
 import { useNavigate } from 'react-router-dom'
@@ -15,7 +15,11 @@ export const TaskHistory =()=>{
     return(
         <>
         <button onClick={handleOnBack}>Go back home</button>
-        <TasksComponentList allTask={tasks}/>
+        <TasksComponentList 
+        allTask={tasks}
+        hideDoneTasks={false}
+        
+        />
         </>
     )
 }

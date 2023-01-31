@@ -1,27 +1,21 @@
-import React, {useState, useContext, useEffect} from 'react'
+import React, {useContext} from 'react'
 import { TaskContext } from '../../context/TaskContext';
 import { TaskView } from './TaskView'
 import { useNavigate } from 'react-router-dom';
 
 export const TaskComponent =(props)=>{
-    const [done, setDone] = useState(false);
     const {task, changeHandler} = props
     const {tasks, setTasks} = useContext(TaskContext);
     const navigate = useNavigate() 
 
-        // useEffect(() => {
-        //     handleOnComplete()
-        // }, []);
     
     const handleOnComplete =(id)=> {
-           setDone(true);
-            // task.done = done;
-            // const newTasks = tasks.filter(elemento => elemento.done===false);
-            // setTasks(newTasks);
-        console.log('hola', task);
-        changeHandler((truco)=>!truco)
+       // changeHandler((truco)=>!truco)     
         task.done=true
-        console.log('hola terminé', task);
+        const newTasksDone = tasks.indexOf(task)        
+        //setTasks(newTasksDone) 
+    
+        console.log('hola desde map', newTasksDone);
     }
    
     const handleOnDelete =(id)=>{
