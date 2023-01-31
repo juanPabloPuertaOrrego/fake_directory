@@ -1,13 +1,21 @@
 import React from 'react'
-import { AllTaskComponent } from './AllTaskComponent'
+import { TasksComponentList } from './AllTaskComponent'
 import { useContext } from 'react'
 import { TaskContext } from '../../context/TaskContext'
+import { useNavigate } from 'react-router-dom'
 
 export const TaskHistory =()=>{
     const {tasks, setTasks} =useContext(TaskContext)
-    console.log(tasks)
+    const navigate = useNavigate()
+
+    const handleOnBack =()=>{
+        navigate('/')
+    }
 
     return(
-        <AllTaskComponent allTask={tasks}/>
+        <>
+        <button onClick={handleOnBack}>Go back home</button>
+        <TasksComponentList allTask={tasks}/>
+        </>
     )
 }

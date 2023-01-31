@@ -2,7 +2,7 @@ import React, {useContext} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { TaskContext } from '../../context/TaskContext'
 
-import { AllTaskComponent } from './AllTaskComponent';
+import { TasksComponentList } from './AllTaskComponent';
 
 export const AllTasks =()=>{
     const {tasks} = useContext(TaskContext);
@@ -10,6 +10,10 @@ export const AllTasks =()=>{
 
     const handleOnAddTask =()=>{
         navigate('/add')
+    }
+
+    const handleOnHistoryTasks =()=>{
+        navigate('/taskHistory')
     }
     return(
         <>
@@ -19,10 +23,13 @@ export const AllTasks =()=>{
             </div>                
             <div>
                 <button onClick={handleOnAddTask}>Go to add tasks</button>
+                <button onClick={handleOnHistoryTasks}>Go to history task</button>
             </div> 
             
         </div>
-        <AllTaskComponent allTask={tasks}/> 
+        <TasksComponentList allTask={tasks}
+            hideDoneTasks = {true}
+        /> 
         </>
         )
 

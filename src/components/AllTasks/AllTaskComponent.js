@@ -1,15 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { TaskComponent } from './TaskComponent'
 
 
-export const AllTaskComponent=(props)=>{
-    const {allTask} = props  
+export const TasksComponentList=(props)=>{
+    const [truco, seTtruco] = useState(false);
+    const {allTask, hideDoneTasks} = props     
+    
+    const tasksToShow = hideDoneTasks ? allTask.filter(task => !task.done):allTask
 
     return(
+
         <div className='d-flex align-items-start flex-wrap'>
-            {allTask.map((element)=>
+            { tasksToShow.map((element)=>
             <TaskComponent key={element.id} 
-            task={element}             
+            task={element}
+            changeHandler = {seTtruco}             
             />)}
         </div>
     )
