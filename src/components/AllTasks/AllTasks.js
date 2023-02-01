@@ -2,7 +2,7 @@ import React, {useContext} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { TaskContext } from '../../context/TaskContext'
 
-import { TasksComponentList } from './AllTaskComponent';
+import { TasksComponentList } from './TasksComponentList';
 
 export const AllTasks =()=>{
     const {tasks} = useContext(TaskContext);
